@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-const PAGE_TITLE = "gse.react-play.template";
+const PAGE_TITLE = "pairing";
 
 test("should start at home page and navigate to About page and display correct content", async ({
   page,
