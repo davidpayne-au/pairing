@@ -1,5 +1,6 @@
 import { HashRouter, NavLink } from 'react-router-dom';
 import { AppRoutes } from './routes';
+import { BangladeshFlag } from './components/BangladeshFlag';
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) => {
   const base = 'px-4 py-2 rounded font-medium transition-colors duration-300 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-focus)]';
@@ -11,11 +12,19 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) => {
 const App = () => (
   <HashRouter>
     <header className="w-full flex justify-start py-5 bg-[var(--color-primary)] shadow-lg mb-0 animate-fade-in dark:shadow-blue-900/40">
-      <nav className="flex gap-4 w-full max-w-5xl mx-auto px-4" aria-label="Primary Navigation">
-        <NavLink to="/" end className={navLinkClass} aria-label="Home">Hello</NavLink>
-        <NavLink to="/about" className={navLinkClass} aria-label="About">About</NavLink>
-        <NavLink to="/weather" className={navLinkClass} aria-label="Weather">Weather</NavLink>
-      </nav>
+      <div className="flex justify-between items-center w-full max-w-5xl mx-auto px-4">
+        <div className="flex items-center gap-4">
+          <BangladeshFlag size={40} className="flex-shrink-0" />
+          <nav className="flex gap-4" aria-label="Primary Navigation">
+            <NavLink to="/" end className={navLinkClass} aria-label="Home">Hello</NavLink>
+            <NavLink to="/about" className={navLinkClass} aria-label="About">About</NavLink>
+            <NavLink to="/weather" className={navLinkClass} aria-label="Weather">Weather</NavLink>
+          </nav>
+        </div>
+        <div className="text-[var(--color-primary-contrast)] font-semibold text-lg hidden sm:block">
+          Bangladesh Cricket Club
+        </div>
+      </div>
     </header>
     <main
       id="main-content"
